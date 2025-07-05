@@ -4,44 +4,146 @@
 
 This document provides a detailed technical roadmap for the ASX Stock Portfolio Tracker application. The roadmap is organized into 6 phases, each building upon the previous phase to create a comprehensive, enterprise-ready portfolio management platform.
 
-## Phase 1: Core Infrastructure Enhancement (Weeks 1-2)
+## Phase 1: Core Differentiation & ASX-Specific Features (Weeks 1-4)
 
-### Backend Infrastructure
+### ASX-Specific AI Intelligence
 
-#### Database Migration System
+#### Smart Sector Analysis Engine
+**Priority: High**
+- **Technology**: Python + Pandas + Scikit-learn
+- **Implementation**:
+  ```python
+  # app/analytics/sector_analysis.py
+  class ASXSectorAnalyzer:
+      def __init__(self):
+          self.sectors = ['Mining', 'Banking', 'Technology', 'Healthcare', 'Property']
+      
+      async def analyze_sector_rotation(self, market_data):
+          # Analyze sector performance trends
+          # Identify optimal sector allocation
+          # Consider economic cycles and ASX-specific factors
+  ```
+- **Features**:
+  - ASX sector performance tracking
+  - Economic cycle awareness
+  - Sector rotation recommendations
+  - Risk-adjusted sector scoring
+- **Benefits**: Capitalize on sector trends before mainstream recognition
+- **Dependencies**: Historical ASX data, economic indicators
+
+#### Dividend Optimization Engine
+**Priority: High**
+- **Technology**: Python + Financial modeling libraries
+- **Implementation**:
+  ```python
+  # app/analytics/dividend_optimizer.py
+  class DividendOptimizer:
+      def __init__(self):
+          self.imputation_rates = self.load_imputation_data()
+      
+      async def optimize_dividend_portfolio(self, user_profile):
+          # Consider imputation credits
+          # Optimize for tax efficiency
+          # Balance yield vs growth
+  ```
+- **Features**:
+  - Imputation credit optimization
+  - DRP recommendations
+  - Tax-efficient dividend strategies
+  - Yield vs growth balancing
+- **Benefits**: Maximize after-tax returns for Australian investors
+- **Dependencies**: ASX dividend data, tax rules
+
+#### ASX-Specific Risk Assessment
+**Priority: High**
+- **Technology**: Python + Risk modeling libraries
+- **Implementation**:
+  ```python
+  # app/risk/asx_risk_model.py
+  class ASXRiskModel:
+      def __init__(self):
+          self.currency_risks = self.load_currency_data()
+          self.market_cycles = self.load_cycle_data()
+      
+      async def assess_portfolio_risk(self, portfolio):
+          # ASX-specific volatility modeling
+          # Currency risk analysis
+          # Market cycle awareness
+  ```
+- **Features**:
+  - ASX volatility modeling
+  - Currency risk analysis
+  - Market cycle awareness
+  - Sector-specific risk factors
+- **Benefits**: Better risk-adjusted returns for Australian market
+- **Dependencies**: ASX historical data, currency data
+
+### Educational Foundation
+
+#### ASX Learning Module System
+**Priority: High**
+- **Technology**: React + Content Management System
+- **Implementation**:
+  ```typescript
+  // frontend/components/learning/LearningModule.tsx
+  interface LearningModule {
+    id: string;
+    title: string;
+    difficulty: 'beginner' | 'intermediate' | 'advanced';
+    content: LearningContent[];
+    asxExamples: ASXStockExample[];
+    quizzes: Quiz[];
+  }
+  ```
+- **Features**:
+  - Progressive difficulty levels
+  - Real ASX examples
+  - Interactive quizzes
+  - Progress tracking
+- **Benefits**: Build confidence and knowledge systematically
+- **Dependencies**: Educational content, ASX data
+
+#### AI Investment Coach
+**Priority: High**
+- **Technology**: Groq API + Personalized learning algorithms
+- **Implementation**:
+  ```python
+  # app/ai/investment_coach.py
+  class InvestmentCoach:
+      def __init__(self, groq_client):
+          self.groq = groq_client
+          self.user_profiles = {}
+      
+      async def provide_guidance(self, user_id, question):
+          # Personalized guidance based on user profile
+          # Risk tolerance assessment
+          # Learning path customization
+  ```
+- **Features**:
+  - Personalized guidance
+  - Risk tolerance assessment
+  - Learning path customization
+  - Real-time market education
+- **Benefits**: Accelerated learning and better decision-making
+- **Dependencies**: Groq API, user profiling system
+
+### Database & Infrastructure
+
+#### Enhanced Database Schema
 **Priority: High**
 - **Technology**: Alembic + SQLAlchemy
 - **Implementation**:
   ```python
-  # alembic/versions/001_initial_schema.py
+  # alembic/versions/002_asx_features.py
   def upgrade():
-      # Add user table
-      # Add watchlist table with user relationship
-      # Add stock table with watchlist relationship
-      # Add transaction table for future use
+      # Add sector analysis table
+      # Add dividend optimization table
+      # Add learning progress table
+      # Add user profiles table
+      # Add risk assessment table
   ```
-- **Benefits**: Version-controlled schema changes, rollback capability
+- **Benefits**: Support for ASX-specific features
 - **Dependencies**: None
-
-#### API Rate Limiting & Caching
-**Priority: High**
-- **Technology**: Redis + FastAPI middleware
-- **Implementation**:
-  ```python
-  # app/middleware/rate_limiter.py
-  class RateLimiter:
-      def __init__(self, redis_client):
-          self.redis = redis_client
-      
-      async def check_rate_limit(self, user_id: str, endpoint: str):
-          # Implement sliding window rate limiting
-  ```
-- **Cache Strategy**:
-  - Yahoo Finance data: 5-minute TTL
-  - News data: 15-minute TTL
-  - User preferences: 1-hour TTL
-- **Benefits**: Reduced API costs, improved performance
-- **Dependencies**: Redis server
 
 #### Error Handling & Logging
 **Priority: Medium**

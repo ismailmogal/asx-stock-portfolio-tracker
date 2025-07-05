@@ -6,39 +6,52 @@ This `development` branch is dedicated to implementing the enhanced features out
 
 ## 📋 Current Development Plan
 
-### Phase 1: Core Infrastructure (Current Sprint)
+### Phase 1: ASX-Specific Differentiation (Current Sprint)
 
-#### Backend Enhancements
-- [ ] **Database Migration System**
-  - Implement Alembic for schema versioning
-  - Create initial migration scripts
-  - Add database backup procedures
+#### ASX AI Intelligence Features
+- [ ] **Smart Sector Analysis Engine**
+  - ASX sector performance tracking
+  - Sector rotation recommendations
+  - Economic cycle awareness
+  - Risk-adjusted sector scoring
 
-- [ ] **API Rate Limiting & Caching**
-  - Redis integration for caching
-  - Rate limiting middleware
-  - Cache invalidation strategies
+- [ ] **Dividend Optimization Engine**
+  - Imputation credit optimization
+  - DRP recommendations
+  - Tax-efficient dividend strategies
+  - Yield vs growth balancing
 
-- [ ] **Enhanced Error Handling**
-  - Structured logging system
-  - Comprehensive error responses
-  - Health check endpoints
+- [ ] **ASX-Specific Risk Assessment**
+  - ASX volatility modeling
+  - Currency risk analysis
+  - Market cycle awareness
+  - Sector-specific risk factors
 
-- [ ] **Authentication System**
+#### Educational Foundation
+- [ ] **ASX Learning Module System**
+  - Progressive difficulty levels
+  - Real ASX examples
+  - Interactive quizzes
+  - Progress tracking
+
+- [ ] **AI Investment Coach**
+  - Personalized guidance
+  - Risk tolerance assessment
+  - Learning path customization
+  - Real-time market education
+
+#### Infrastructure Enhancements
+- [ ] **Enhanced Database Schema**
+  - Sector analysis tables
+  - Dividend optimization tables
+  - Learning progress tracking
+  - User profiling system
+
+- [ ] **Authentication & User Management**
   - JWT-based authentication
-  - User management endpoints
-  - Password hashing with bcrypt
-
-#### Frontend Enhancements
-- [ ] **State Management**
-  - Zustand store implementation
-  - Centralized state for user data
-  - Persistent state management
-
-- [ ] **Component Library**
-  - Reusable UI components
-  - Design system implementation
-  - Accessibility improvements
+  - User profiles with investment preferences
+  - Learning progress tracking
+  - Risk tolerance assessment
 
 ### Phase 2: Advanced Features (Next Sprint)
 
